@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Explore Electronics with Integrity Innovations</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body class="page-transition">
+  <header class="header">
+    <a href="#" class="logo">
+      <img src="IntegrityLogo.png" alt="Integrity Logo" />
+      <span>Integrity Innovations</span>
+    </a>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <nav class="nav" id="navMenu">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="explore.html">Explore</a>
+      <a href="buy.php">Buy</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <section class="home">
+    <div class="content">
+      <h2>Explore Electronics with Integrity Innovations</h2>
+      <p>
+        A platform that allows you to explore the world of Electrical and Electronics Engineering, a place for comprehensive and convenient learning, and an opportunity for interaction.
+      </p>
+      <a href="explore.html">Explore now!</a>
+    </div>
+
+    <div class="wrapper-login" id="form-wrapper">
+      <h2 id="form-title">Welcome to our Community!</h2>
+
+      <!-- Login Form -->
+      <form action="#" class="form login-form active" id="loginForm">
+        <div class="input-box">
+          <span class="icon"><ion-icon name="mail"></ion-icon></span>
+          <input type="email" required id="loginEmail" />
+          <label>Email</label>
+        </div>
+        <div class="input-box password-wrapper">
+          <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+          <input type="password" required id="loginPassword" />
+          <label>Password</label>
+          <span class="toggle-password" data-target="loginPassword">👁️</span>
+        </div>
+        <div class="remember-forgot">
+          <label><input type="checkbox" />Remember me</label>
+          <a href="#">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn">Login</button>
+        <div class="register-link">
+          <p>Not a member? <a href="#" id="show-signup">Sign up now</a></p>
+        </div>
+      </form>
+
+      <!-- Sign Up Form -->
+      <form action="#" class="form signup-form" id="signupForm">
+        <div class="input-box">
+          <span class="icon"><ion-icon name="person"></ion-icon></span>
+          <input type="text" required id="signupUsername" />
+          <label>Username</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="mail"></ion-icon></span>
+          <input type="email" required id="signupEmail" />
+          <label>Email</label>
+        </div>
+        <div class="input-box">
+          <span class="icon"><ion-icon name="person-circle"></ion-icon></span>
+          <select required id="signupRole">
+            <option value="" disabled selected></option>
+            <option value="User">User</option>
+            <option value="Manager">Manager</option>
+            <option value="Admin">Admin</option>
+          </select>
+          <label>Register as</label>
+        </div>
+        <div class="input-box password-wrapper">
+          <span class="icon"><ion-icon name="lock-closed"></ion-icon></span>
+          <input type="password" required id="signupPassword" />
+          <label>Create Password</label>
+          <span class="toggle-password" data-target="signupPassword">👁️</span>
+        </div>
+        <div class="remember-forgot">
+          <label><input type="checkbox" id="termsCheckbox" /> I agree to the terms & conditions</label>
+        </div>
+        <button type="submit" class="btn">Sign Up</button>
+        <div class="register-link">
+          <p>Already a member? <a href="#" id="show-login">Login now</a></p>
+        </div>
+      </form>
+
+      <!-- Forgot Password Form -->
+      <div class="form forgot-password-form" id="forgot-password-form">
+        <h2>Reset Password</h2>
+        <form action="#">
+          <div class="input-box">
+            <span class="icon"><ion-icon name="mail"></ion-icon></span>
+            <input type="email" required id="reset-email" />
+            <label>Enter your registered email</label>
+          </div>
+          <button type="submit" class="btn">Send Reset Link</button>
+          <div class="register-link">
+            <p>Remembered your password? <a href="#" id="back-to-login">Go back to Login</a></p>
+          </div>
+        </form>
+      </div>
+
+      <!-- Confirmation Screen -->
+      <div class="form confirmation-screen" id="confirmation-screen">
+        <h2>Check Your Email</h2>
+        <p class="confirmation-message">
+          ✅ A password reset link has been sent to <span id="user-reset-email">your email</span>. Please check your inbox.
+        </p>
+        <div class="register-link">
+          <p><a href="#" id="confirmation-back-login">Return to Login</a></p>
+        </div>
+      </div>
+
+      <!-- OTP Form -->
+      <form action="#" class="form otp-form" id="otpForm">
+        <div class="input-box">
+          <span class="icon"><ion-icon name="mail-open"></ion-icon></span>
+          <input type="text" required id="otpInput" />
+          <label>Enter the OTP sent to your email</label>
+        </div>
+        <button type="submit" class="btn">Verify OTP</button>
+      </form>
+    </div>
+  </section>
+
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('page-transition');
+      const navLinks = document.querySelectorAll('.nav a');
+      navLinks.forEach(link => {
+        link.addEventListener('click', function (e) {
+          const href = this.getAttribute('href');
+          if (href && href.endsWith('.html')) {
+            e.preventDefault();
+            document.body.classList.add('fade-out');
+            setTimeout(() => {
+              window.location.href = href;
+            }, 500);
+          }
+        });
+      });
+    });
+
+    document.getElementById('menu-toggle').addEventListener('click', function () {
+      document.getElementById('navMenu').classList.toggle('active');
+    });
+
+    document.getElementById('loginForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+      login();
+    });
+
+    function login() {
+      localStorage.setItem("isLoggedIn", "true");
+      window.location.href = "interactive-chat.html";
+    }
+  </script>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2025 Integrity Innovations. All rights reserved.</p>
+      <div class="social-icons">
+        <a href="https://web.facebook.com/gsintegrityelectronics" target="_blank" aria-label="Facebook">
+          <img src="images/facebook.png" alt="Facebook" class="social-icon" />
+        </a>
+        <a href="https://www.instagram.com/gs_integrity_electronics/" target="_blank" aria-label="Instagram">
+          <img src="images/instagram.png" alt="Instagram" class="social-icon" />
+        </a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

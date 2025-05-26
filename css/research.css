@@ -1,0 +1,148 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Typography & Base */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Container */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+.container h2 {
+padding-top: 80px;
+}
+
+/* Hero Section */
+.hero {
+  background-color: #0055aa;
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.hero h2 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2em;
+}
+
+/* Cards Section */
+.card-grid {
+  padding: 40px 0;
+}
+
+.card-grid h3 {
+  font-size: 1.8em;
+  margin-bottom: 20px;
+  color: #002244;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-left: 5px solid #0055aa;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card h4 {
+  font-size: 1.2em;
+  color: #002244;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1em;
+  margin-bottom: 10px;
+}
+
+.card button {
+  padding: 8px 16px;
+  background-color: #0055aa;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.card button:hover {
+  background-color: #003366;
+}
+
+/* Research Resources */
+section ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+section ul li a {
+  text-decoration: none;
+  color: #0055aa;
+}
+
+section ul li a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+footer {
+  background-color: #002244;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  margin-top: 40px;
+}
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  .card-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero {
+    padding: 40px 0;
+  }
+
+  .card {
+    padding: 15px;
+  }
+
+  .card button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 240px) {
+  .hero h2 {
+    font-size: 1.6rem;
+  }
+
+  .card h4 {
+    font-size: 1.1rem;
+  }
+}

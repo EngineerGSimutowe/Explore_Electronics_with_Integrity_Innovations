@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Explore - Integrity Innovations</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/explore.css">
+</head>
+<body class="page-transition">
+  <header class="header">
+    <a href="index.html" class="logo">
+        <img src="IntegrityLogo.png" alt="Integrity Logo">
+        <span>Integrity Innovations</span>
+    </a>
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="explore.html">Explore</a>
+        <a href="buy.php">Buy</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+  </header>
+
+  <main class="explore-wrapper">
+    <div class="container">
+      <h1>About Integrity Innovations</h1>
+      <div class="cards">
+        <div class="card" onclick="location.href='#'">
+          <h2>Explore Electronics Platform</h2>
+          <p>A platform that allows you to explore the world of Electrical and Electronics Engineering, a place for peer-to-peer interaction, and an opportunity for networking.</p>
+        </div>
+        <div class="card" onclick="location.href='#'">
+          <h2>Products and Services</h2>
+          <p>We supply electronic components for student projects and engineering experiments</p>
+        </div>  
+	<div class="card" onclick="location.href='#'">
+          <h2>Our Engineering Team</h2>
+          <p>Our inclusive team is made up of tech-savvy members spanning from university students to professional engineers.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        document.body.classList.add('page-transition');
+        const navLinks = document.querySelectorAll('.nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href && href.endsWith('.html')) {
+                    e.preventDefault();
+                    document.body.classList.add('fade-out');
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 500);
+                }
+            });
+        });
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.querySelector('.nav');
+    
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        menuToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('active');
+            menuToggle.textContent = '☰';
+        }
+    });
+});
+  </script>
+<footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Integrity Innovations. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://web.facebook.com/gsintegrityelectronics" target="_blank" aria-label="Facebook">
+        <img src="images/facebook.png" alt="Facebook" class="social-icon" />
+      </a>
+      <a href="https://www.instagram.com/gs_integrity_electronics/" target="_blank" aria-label="Instagram">
+        <img src="images/instagram.png" alt="Instagram" class="social-icon" />
+      </a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

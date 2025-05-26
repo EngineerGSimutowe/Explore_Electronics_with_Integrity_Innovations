@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Study EEE | Integrity Innovations</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="stylesheet" href="css/study-eee.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"/>
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo">
+      <img src="IntegrityLogo.png" alt="Integrity Logo" />
+      <span>Integrity Innovations</span>
+    </a>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="explore.html">Explore</a>
+      <a href="buy.php">Buy</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+  </header>
+
+  <section class="container">
+    <h2>Where to Study EEE</h2>
+    <div class="card-grid">
+      <div class="card" onclick="window.location.href='https://www.icuzambia.net/program_details.php?prog=33'">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnXEXnX9yt2NGOSPNQDcivuWEv69rTygL21A&s" alt="ICU University" />
+        <div>
+          <h3>Information & Communications University</h3>
+          <p><span style="color: #fff;">Bachelor of Engineering in Electrical and Electronics - Zambia</span></p>
+        </div>
+      </div>
+
+      <div class="card" onclick="window.location.href='https://engineering.uonbi.ac.ke/'">
+        <img src="https://upload.wikimedia.org/wikipedia/en/a/a0/Uon_emblem.gif" alt="University of Nairobi" />
+        <div>
+          <h3>University of Nairobi</h3>
+          <p><span style="color: #fff;">Electrical and Electronic Engineering program with strong research focus.</span></p>
+        </div>
+      </div>
+
+      <div class="card" onclick="window.location.href='https://web.mit.edu/'">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0c/MIT_logo.svg" alt="MIT" />
+        <div>
+          <h3>MIT</h3>
+          <p><span style="color: #fff;">World-class Electrical Engineering and Computer Science programs.</span></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container">
+    <h2>Online Courses & Tutorials</h2>
+    <div class="card-grid">
+      <div class="card">
+        <h3>Coursera – EEE Fundamentals</h3>
+        <p>Learn the basics of EEE, offered by top institutions.</p>
+        <a href="https://www.coursera.org/courses?query=electrical%20engineering" target="_blank" class="btn">Start Learning</a>
+      </div>
+      <div class="card">
+        <h3>edX – Electronics Courses</h3>
+        <p>Electronics and embedded system tutorials from MIT, Harvard and more.</p>
+        <a href="https://www.edx.org/learn/electronics" target="_blank" class="btn">Explore</a>
+      </div>
+      <div class="card">
+        <h3>YouTube – EEE Tutorials</h3>
+        <p>Watch hands-on tutorials and mini-projects on embedded systems.</p>
+        <a href="https://www.youtube.com/results?search_query=electrical+engineering+tutorials" target="_blank" class="btn">Watch Now</a>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <section class="container">
+    <h2>Study Tips & Strategies</h2>
+    <ul>
+      <li>Master the fundamentals before moving to complex topics.</li>
+      <li>Engage in hands-on projects and simulations frequently.</li>
+      <li>Use online forums like StackExchange, GitHub, and ResearchGate.</li>
+      <li>Regularly read journals and publications to stay updated.</li>
+    </ul>
+  </section>
+  <section class="container">
+  <h2>Suggested Textbooks</h2>
+  <div class="card-grid books">
+    <div class="card book-card">
+      <div class="book-info">
+        <h3><strong>Electronic Devices and Circuits</strong></h3>
+        <p>By Jimmie J. Catheyt</p>
+        <a href="https://www.gacbe.ac.in/images/E%20books/Electronic%20Devices%20and%20Circuits%20JIMMIE%20J.%20CATHEY.pdf" target="_blank" class="btn">Read</a>
+      </div>
+      <img src="https://m.media-amazon.com/images/I/81UchdfBCTL.jpg" alt="Lessons in Electric Circuits Cover">
+    </div>
+
+    <div class="card book-card">
+      <div class="book-info">
+        <h3><strong>Electrical Circuit Theory and Technology</strong></h3>
+        <p>By John Bird</p>
+        <a href="https://www.gacbe.ac.in/images/E%20books/Bird%20-%20Electrical%20Circuit%20Theory%20and%20Technology%202nd%20Rev.pdf" target="_blank" class="btn">Read</a>
+      </div>
+      <img src="https://images.tandf.co.uk/common/jackets/crclarge/978075065/9780750657846.jpg" alt="Electrical Circuit Theory and Technology Cover">
+    </div>
+
+    <div class="card book-card">
+      <div class="book-info">
+        <h3><strong>Ultimate Electronics</strong></h3>
+        <p>By Michael F. Robbins</p>
+        <a href="https://ultimateelectronicsbook.com/" target="_blank" class="btn">Read</a>
+      </div>
+      <img src="https://ultimateelectronicsbook.com/assets/20170112-UltimateElectronicsBookCover_red_v2_460-c11033c303d484e8dbdf0fbf8fa2b939b9fcb895feadbeb0c7d2c710babe533764355eba2bdbc820c7c6e91205b4a4379ec9fce1b67b069136fa20534e498a32.jpg" alt="Ultimate Electronics Cover">
+    </div>
+  </div>
+</section>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.querySelector('.nav');
+    
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        menuToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('active');
+            menuToggle.textContent = '☰';
+        }
+    });
+});
+</script>
+  <footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Integrity Innovations. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://web.facebook.com/gsintegrityelectronics" target="_blank" aria-label="Facebook">
+        <img src="images/facebook.png" alt="Facebook" class="social-icon" />
+      </a>
+      <a href="https://www.instagram.com/gs_integrity_electronics/" target="_blank" aria-label="Instagram">
+        <img src="images/instagram.png" alt="Instagram" class="social-icon" />
+      </a>
+    </div>
+  </div>
+</footer>
+
+
+</body>
+</html>

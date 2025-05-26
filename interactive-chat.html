@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Interactive Chat</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <link rel="stylesheet" href="css/interactive-chat.css"/>
+</head>
+<body>
+<header class="header">
+    <a href="index.html" class="logo">
+        <img src="IntegrityLogo.png" alt="Integrity Logo">
+        <span>Integrity Innovations</span>
+    </a>
+    <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="explore.html">Explore</a>
+        <a href="buy.php">Buy</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+    <button class="menu-toggle" id="menu-toggle">☰</button>
+  </header>
+  <header class="chat-header">
+    <h1>Interactive Chat</h1>
+    <button onclick="logout()" class="logout-btn">Logout</button>
+  </header>
+
+  <main>
+    <section class="user-info">
+      <p><strong>Logged in as:</strong> <span id="currentUser"></span> (<span id="currentRole"></span>)</p>
+    </section>
+
+    <section class="group-chat">
+      <h2>Group Chat</h2>
+      <div class="chat-groups" id="chatGroups">
+        <div class="group-card">
+          <h3>EEE Students Group</h3>
+          <button onclick="requestGroupJoin()">Request to Join</button>
+          <div class="admin-only hidden" id="groupControls">
+            <button onclick="createGroup()">Create Group</button>
+            <button onclick="removeMember()">Remove Member</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="private-chat">
+      <h2>Private Chat</h2>
+      <div class="private-card">
+        <input type="text" id="chatUser" placeholder="Enter email to chat with"/>
+        <button onclick="sendChatRequest()">Send Chat Request</button>
+      </div>
+      <div class="requests">
+        <h3>Chat Requests</h3>
+        <ul id="chatRequests">
+          <li>No requests yet.</li>
+        </ul>
+      </div>
+    </section>
+  </main>
+ <footer>
+  <div class="footer-content">
+    <p>&copy; 2025 Integrity Innovations. All rights reserved.</p>
+    <div class="social-icons">
+      <a href="https://web.facebook.com/gsintegrityelectronics" target="_blank" aria-label="Facebook">
+        <img src="images/facebook.png" alt="Facebook" class="social-icon" />
+      </a>
+      <a href="https://www.instagram.com/gs_integrity_electronics/" target="_blank" aria-label="Instagram">
+        <img src="images/instagram.png" alt="Instagram" class="social-icon" />
+      </a>
+    </div>
+  </div>
+ </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+      const username = localStorage.getItem('username') || 'Unknown';
+      const role = localStorage.getItem('role') || 'User';
+
+      if (!isLoggedIn) {
+        window.location.href = 'index.html';
+        return;
+      }
+
+      document.getElementById('currentUser').textContent = username;
+      document.getElementById('currentRole').textContent = role;
+
+      if (role === 'Admin') {
+        document.getElementById('groupControls').classList.remove('hidden');
+      }
+    });
+
+    function logout() {
+      localStorage.clear();
+      window.location.href = 'index.html';
+    }
+
+    function sendChatRequest() {
+      const userToChat = document.getElementById('chatUser').value.trim();
+      if (userToChat) {
+        const li = document.createElement('li');
+        li.textContent = `Chat request sent to ${userToChat}`;
+        document.getElementById('chatRequests').appendChild(li);
+      }
+    }
+
+    function requestGroupJoin() {
+      alert("Group join request sent!");
+    }
+
+    function createGroup() {
+      alert("Admin: Group created.");
+    }
+
+    function removeMember() {
+      alert("Admin: Member removed.");
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+    const menuToggle = document.getElementById('menu-toggle');
+    const navMenu = document.querySelector('.nav');
+    
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        menuToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+    });
+    
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+        if (!menuToggle.contains(e.target) && !navMenu.contains(e.target)) {
+            navMenu.classList.remove('active');
+            menuToggle.textContent = '☰';
+        }
+    });
+});
+  </script>
+
+</body>
+</html>

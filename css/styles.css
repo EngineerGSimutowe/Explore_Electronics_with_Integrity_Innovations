@@ -1,0 +1,534 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 99;
+    background: rgba(3, 31, 65, 0.85); /* 🔵 Semi-transparent dark blue background */
+    backdrop-filter: blur(5px); /* Smooths things out */
+    -webkit-backdrop-filter: blur(5px); /* For Safari */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Optional subtle border */
+}
+
+
+.header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adds spacing between logo and text */
+    font-size: 1.7em;
+    color: #fff;
+    text-decoration: none;
+}
+
+.header .logo img {
+    height: 50px; /* Resize logo image */
+    width: auto; /* Maintain aspect ratio */
+}
+
+.nav a {
+    position: relative;
+    font-size: 1.1em;
+    color: #fff;
+    text-decoration: none;
+    margin-left: 40px;    
+}
+
+.nav a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    border-radius: 5px;
+    transform: scaleX(0);
+    transition: .5s;
+}
+
+.nav a:hover::after {
+    transform: scaleX(1);
+}
+
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('../images/Background4.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 80px 100px 0;
+}
+
+.home .content {
+    max-width: 600px;
+    color:#fff;
+}
+
+.content h2 {
+    font-size: 2.5em;
+    letter-spacing: .03em;
+}
+
+.content p {
+    margin: 10px 0 40px;
+}
+
+.content a {
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #fff;
+    font-weight: 500;
+    padding: 10px 40px;
+    border-radius: 40px;
+    transition: .5s;
+}
+
+.content a:hover {
+    background: rgb(3, 31, 65);
+}
+
+.home .wrapper-login {
+    position: relative;
+    width: 440px;
+    padding-top: 25px;
+}
+
+.wrapper-login h2 {
+    font-size: 1.5em;
+    color: #fff;
+    text-align: center;
+    background: rgb(3, 31, 65);
+    border: 1px solid rgb(3, 31, 65);
+    outline: none;
+    border-radius: 40px;
+}
+
+.wrapper-login .input-box {
+    position: relative;
+    width: 100%;
+    height: 60px;
+    margin: 40px 0;
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 1px solid #fff;
+    outline: none;
+    border-radius: 40px;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 25px 0 45px;
+}
+
+.input-box label {
+    position: absolute;
+    top: 50%;
+    left: 45px;
+    transform: translateY(-50%);
+    font-size: 1em;
+    color: #fff;
+    pointer-events: none;
+    transition: .5s;
+}
+
+.input-box input:focus ~ label,
+.input-box input:valid ~ label {
+    font-size: .8em;
+    top: -14px;
+    left: 17px;    
+}
+
+.input-box .icon {
+    position: absolute;
+    top: 14px;
+    left: 15px;
+    font-size: 1.2em;
+    color: #fff;
+}
+
+.input-box .error-text {
+    display: block;
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    font-size: 0.8em;
+    color: #ff4d4d;
+    z-index: 0;
+    padding-left: 45px;
+}
+
+.wrapper-login .remember-forgot {
+    font-size: .9em;
+    color: #fff;
+    font-weight: 500;
+    margin: -25px 0 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.remember-forgot label input {
+    accent-color: rgb(3, 31, 65);
+    margin-right: 3px;
+}
+
+.remember-forgot a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.remember-forgot a:hover {
+    text-decoration: underline;
+}
+
+.wrapper-login .btn {
+    width: 100%;
+    height: 50px;
+    border: none;
+    outline: none;
+    border-radius: 40px;
+    background: linear-gradient(180deg, #fff, rgb(3, 31, 65));
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 5);
+    cursor: pointer;
+    font-size: 1em;
+    color: #fff;
+    font-weight: 500;
+}
+
+.wrapper-login .register-link {
+    font-size: .9em;
+    color: #fff;
+    text-align: center;
+    margin: 30px 0;
+}
+
+.register-link p a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link p a:hover {
+    text-decoration: underline;
+}
+/* Toggle Password Icon */
+.password-wrapper {
+    position: relative;
+}
+/* Add space between SignUp Password and Agree to terms */
+.signup-form .input-box.password-wrapper {
+    margin-bottom: 30px;
+}
+/* Add space between Login Password and Remember me */
+.login-form .input-box.password-wrapper {
+    margin-bottom: 30px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    cursor: pointer;
+    color: #fff;
+    font-size: 1.1em;
+}
+
+/* Hide other forms unless active */
+.wrapper-login .form {
+    display: none;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.wrapper-login .form.active {
+    display: block;
+}
+@media (max-height: 700px) {
+    .wrapper-login {
+        transform: scale(0.95);
+        padding-top: 20px;
+    }
+    .wrapper-login .input-box {
+        margin: 20px 0;
+    }
+}
+
+
+/* Optional animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Error message style */
+.input-error {
+    border: 1px solid red;
+}
+
+.error-text {
+    color: red;
+    font-size: 0.85em;
+    margin-top: 5px;
+    padding-left: 10px;
+    display: block;
+    position: relative;
+    z-index: 2;
+}
+.confirmation-screen {
+    display: none;
+    text-align: center;
+    color: #fff;
+    animation: fadeIn 0.4s ease-in-out;
+}
+
+.confirmation-screen.active {
+    display: block;
+}
+
+.confirmation-message {
+    margin: 30px 0;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+#user-reset-email {
+    font-weight: bold;
+    color: #ffd700; /* highlight email address */
+}
+/* Add this to your styles.css at the bottom */
+.page-transition {
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.page-transition.fade-out {
+    opacity: 0;
+}
+.input-box select {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 1px solid #fff;
+    outline: none;
+    border-radius: 40px;
+    font-size: 1em;
+    color: #fff;
+    padding: 0 25px 0 45px;
+    appearance: none;
+}
+
+.input-box select:focus ~ label,
+.input-box select:valid ~ label {
+    font-size: .8em;
+    top: -14px;
+    left: 17px;
+}
+
+.input-box select option {
+    color: #000; /* Visible text in dropdown */
+    background-color: #fff;
+}
+
+/* Footer */
+.footer-content {
+  max-width: 2100px;
+  margin: 0 auto;
+  margin-left: 0;
+  margin-right: 0;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  background-color: #002244;
+  color: #fff;
+}
+
+.footer-content p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.social-icons {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Hamburger Menu Toggle */
+.menu-toggle {
+  display: none;
+  font-size: 2em;
+  color: white;
+  cursor: pointer;
+}
+
+/* Responsive Layout for Smaller Screens */
+@media (max-width: 768px) {
+  .header {
+    padding: 20px;
+    flex-wrap: wrap;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background: rgba(3, 31, 65, 0.95);
+    margin-top: 10px;
+    border-radius: 10px;
+  }
+
+  .nav.active {
+    display: flex;
+  }
+
+  .nav a {
+    margin: 10px 20px;
+    font-size: 1.1em;
+  }
+
+  .home {
+    flex-direction: column;
+    padding: 60px 20px;
+    height: auto;
+    text-align: center;
+    margin-top: 100px; /* Adjust to match header height + padding */
+  }
+
+  .home .content {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .content h2 {
+    font-size: 1.8em;
+  }
+
+  .content p {
+    font-size: 1em;
+    margin-bottom: 20px;
+  }
+
+  .wrapper-login {
+    width: 100%;
+    padding: 0 20px;
+  }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    border-radius: 8px;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+.form-group textarea {
+    height: 100px;
+}
+
+.profile-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.profile-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    right: 0;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    border-radius: 4px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.profile-dropdown:hover .dropdown-content {
+    display: block;
+}
